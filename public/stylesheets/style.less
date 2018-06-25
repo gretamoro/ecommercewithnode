@@ -12,35 +12,49 @@
   font-family: 'Dosis', sans-serif;
 }
 
-.cart{
+.menu{
   width: 30%;
   height: auto;
 }
 
-.cart nav h1{
+.menu .session{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu nav h1{
   text-align: center;
   margin: 30px;
 }
 
-.cart nav h1 a{
+.menu nav h1 a{
   font-family: 'Kaushan Script', cursive;
   font-size: 40px;
   text-decoration: none;
   color: indianred;
 }
 
-.cart ul{
-  list-style: none;
-}
-
-#logIn{
+nav div button#logIn{
   margin: 10px auto;
+  text-align: center;
   background-color: lightpink;
+  color: #4c4c4b;
   border: 2px dotted hotpink;
   width: 150px;
   height: 35px;
   border-radius: 7px;
   cursor: pointer;
+}
+
+nav div button#logIn:hover{
+  background-color: pink;
+  color: black;
+}
+
+nav div button#logIn:active{
+  transform: translateY(3px);
 }
 
 .user{
@@ -52,31 +66,135 @@
   padding: 7px;
   border-radius: 7px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.user button{
+.user h3{
+  margin-bottom: 10px;
+  color: gray;
+  cursor: pointer;
+}
+
+.user button {
   background-color: hotpink;
   border: 2px dotted lightpink;
   border-radius: 7px;
   margin: 5px 10px;
   height: 30px;
+  cursor: pointer;
+}
+
+.user button:hover{
+  background-color: pink;
+  border: 2px dotted hotpink;
+}
+
+.user button:active{
+  transform: translateY(3px);
+}
+
+.user button a{
+  color: #4c4c4b;
+  text-decoration: none;
+}
+
+.cart{
+  margin: 40px 50px 10px;
+  border-top: 2px solid lightgray;
+  padding-top: 30px;
+}
+
+.cart h2{
+  margin-bottom: 30px;
+}
+
+.cart #empty{
+  margin-bottom: 25px;
+}
+
+.cart #productsCart{
+  list-style: none;
+  margin: 0px 0px 20px;
+}
+
+.cart #productsCart .item{
+  font-size: 20px;
+  border-bottom: 1px solid lightgray;
+  padding: 5px;
+  margin: 10px;
 }
 
 .products{
-  display: flex;
   width: 70%;
   height: auto;
-  flex-wrap: wrap;
+  padding-right: 20px;
 }
 
 .cadaUno {
-  width: 30%;
-  height: auto;
+  width: 100%;
+  height: 250px;
+  border: 2px solid lightgray;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+  padding: 25px;
 }
 
-.cadaUno img{
-  width: 350px;
-  height: auto;
+.cadaUno .img{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadaUno .img .divImg{
+  max-width: 230px;
+  max-height: 230px;
+  padding: 15px;
+  margin: 20px;
+}
+
+.cadaUno .img .divImg img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.cadaUno .info{
+  width: 70%;
+  margin: 20px;
+  text-align: justify;
+}
+.cadaUno .info h2{
+  margin-bottom: 20px;
+}
+
+.cadaUno .info span{
+  font-size: 20px;
+}
+
+.cadaUno .info button{
+  display: block;
+  font-size: 18px;
+  background-color: pink;
+  border: 2px dashed indianred;
+  color: #4c4c4b;
+  border-radius: 7px;
+  width: 180px;
+  height: 40px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.cadaUno .info button:hover{
+  background-color: lightpink;
+  border: 2px dashed pink;
+  color: #4c4c4b;
+}
+
+.cadaUno .info button:active{
+  transform: translateY(3px);
 }
 
 .hide{

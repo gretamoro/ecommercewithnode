@@ -6,9 +6,9 @@ let self = {}
 self.get = function (req, res) {
   const images = photoService.getImg();
   if (userlogService.getUserData(req.body) == true) {
-    return res.render('cargar', {
-      user: 'Juani'
-    })
+    return res.json({
+        data: 'true'
+      })
   }else {
     return res.render('index', {
       photos: images
