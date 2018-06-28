@@ -7,7 +7,7 @@ $('#close').on('click', function () {
 })
 
 $('#sendUserData').on('click', function () {
-  const user = $('#user').val();
+  const user = $('#userName').val();
   const pass = $('#pass').val();
   $.ajax({
     method: 'POST',
@@ -18,13 +18,14 @@ $('#sendUserData').on('click', function () {
     }
   }).done(function (data) {
     console.log(data);
-    if (data == true) {
-      $('#cargar').attr('href', 'http://localhost:3000/cargar')
+    if (data.data == true) {
+      window.location.href = 'http://localhost:3000/cargar'
     }else {
       const error = '<div class="error">El usuario o la contraseña son incorrectos</div>';
+      $('#userData').append(error);
     }
   })
-  $('#user').val('');
+  $('#userName').val('');
   $('#pass').val('');
 })
 
@@ -48,4 +49,8 @@ $('.add').on('click', function () {
   }
   let suma = $('#total').html(sum(total));
 
+})
+
+$('#logOut').on('click', function () {
+  window.location.href = 'http://localhost:3000/'
 })

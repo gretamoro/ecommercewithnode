@@ -5,11 +5,11 @@ let self = {}
 
 self.get = function (req, res) {
   const images = photoService.getImg();
-  if (userlogService.getUserData(req.body) == true) {
-    return res.json({
-        data: 'true'
-      })
+  if (userlogService.isLogged == true) {
+    console.log('true');
+    return res.redirect('/cargar')
   }else {
+    console.log('false');
     return res.render('index', {
       photos: images
     })
@@ -17,8 +17,18 @@ self.get = function (req, res) {
 }
 
 self.post = function (req, res) {
-  userlogService.getUserData(req.body);
-  return res.redirect('/');
+  if (userlogService.getUserData(req.body) == true) {
+    console.log('true');
+    return res.json({
+        data: true
+    })
+  }else {
+    console.log('false');
+    return res.json({
+        data: false
+    })
+  }
+
 }
 
 module.exports = self;
