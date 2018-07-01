@@ -9,13 +9,30 @@
   <body>
     <main class="main-container-cargar">
       <div class="cargar">
-        <h1><a href="#">La mano invisible del mercado</a></h1>
-        <div id="userData" class="user">
-          <input id="url" type="text" name="" value="" placeholder="url de imagen"/>
-          <input id="title" type="text" name="" value="" placeholder="Nombre del Producto"/>
-          <input id="price" type="text" name="" value="" placeholder="Precio ¥"/>
-          <div class="">
-            <button type="button" name="button" id="upload">Cargar foto</button>
+        <h1><a href="http://localhost:3000">La mano invisible del mercado</a></h1>
+        <div class="upload-form">
+          <div class="salute">
+            <h2>¡Hola {{user}}!</h2>
+            <p>Publicá tu Bento en 5 pasos:</p>
+            <ol>
+              <li>Copiá y pegá la url de la imagen de tu producto</li>
+              <li>Ponele un título</li>
+              <li>Agregá el precio</li>
+              <li>Hacé click en "Cargar producto"</li>
+              <li>Click en "Cerrar sesión" para volver a la página principal</li>
+            </ol>
+            <p>Listo, verás tu producto cargado en la tienda.<br/>
+              ¡Éxitos en tus ventas!</p>
+          </div>
+          <div class="form">
+            <input id="url" type="text" name="" value="" placeholder="Url de imagen"/>
+            <input id="title" type="text" name="" value="" placeholder="Nombre del Producto"/>
+            <input id="price" type="text" name="" value="" placeholder="Precio ¥"/>
+          </div>
+          <div id="complete" class="success hide">¡Tu producto se cargó exitosamente!</div>
+          <div id="incomplete" class="error hide">Completá todos los campos antes de publicar el producto.</div>
+          <div class="buttons">
+            <button type="button" name="button" id="upload">Cargar producto</button>
             <button type="button" name="button" id="logOut">Cerrar sesión</button>
           </div>
         </div>

@@ -1,11 +1,12 @@
+//LogIn form
 $('#logIn').on('click', function () {
   $('#userData').removeClass('hide');
 })
-
 $('#close').on('click', function () {
   $('#userData').addClass('hide');
 })
 
+//LogIn button
 $('#sendUserData').on('click', function () {
   const user = $('#userName').val();
   const pass = $('#pass').val();
@@ -29,6 +30,7 @@ $('#sendUserData').on('click', function () {
   $('#pass').val('');
 })
 
+//Carrito
 $('.add').on('click', function () {
   console.log($(this).siblings('h2').html());
   const total = $('#total').html();
@@ -48,9 +50,46 @@ $('.add').on('click', function () {
     return result
   }
   let suma = $('#total').html(sum(total));
-
 })
 
+//Cargar Foto
+$('#upload').on('click', function () {
+  const url = $('#url').val();
+  const title = $('#title').val();
+  const price = $('#price').val();
+
+  $.ajax({
+    method: 'POST',
+    url: 'http://localhost:3000/cargar',
+    data: {
+      url: url,
+      producto: title,
+      precio: price
+    }
+  }).done(function (data) {
+    if (data.complete) {
+      $('#complete').removeClass('hide');
+      setTimeout(function () {
+        $('#complete').addClass('hide');
+      }, 5000)
+    }else {
+      $('#incomplete').removeClass('hide');
+      setTimeout(function () {
+        $('#incomplete').addClass('hide');
+      }, 5000)
+    }
+    $('#url').val('');
+    $('#title').val('');
+    $('#price').val('');
+  })
+})
+
+//LogOut
 $('#logOut').on('click', function () {
-  window.location.href = 'http://localhost:3000/'
+  $.ajax({
+    method: 'PUT',
+    url: 'http://localhost:3000/logout'
+  }).done(function (data) {
+    window.location.href = 'http://localhost:3000/'
+  })
 })

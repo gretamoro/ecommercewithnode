@@ -1,5 +1,6 @@
 /*HOME*/
 
+/*Reset*/
 *{
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +13,7 @@
   font-family: 'Dosis', sans-serif;
 }
 
+/*Menu - LogIn*/
 .menu{
   width: 30%;
   height: auto;
@@ -93,13 +95,16 @@ nav div button#logIn:active{
   transform: translateY(3px);
 }
 
-.user .error{
+.error{
   background-color: indianred;
   border-radius: 7px;
   border: 2px solid gray;
   color: white;
+  width: 60%;
+  margin: auto;
 }
 
+/*Carrito*/
 .cart{
   margin: 40px 50px 10px;
   border-top: 2px solid lightgray;
@@ -126,6 +131,7 @@ nav div button#logIn:active{
   margin: 10px;
 }
 
+/*Productos*/
 .products{
   width: 70%;
   height: auto;
@@ -212,11 +218,87 @@ nav div button#logIn:active{
 }
 
 .cargar{
-  width: 70%;
+  width: 60%;
+  height: auto;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px dotted mediumvioletred;
+  border-radius: 12px;
+}
+
+.cargar h1{
+  width: 30%;
+  margin: 30px auto;
+}
+
+.cargar h1 a{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
+  text-decoration: none;
+  color: indianred;
+}
+
+.upload-form .salute h2{
+  font-size: 30px;
+  color: mediumvioletred;
+  margin-bottom: 20px;
+}
+
+.upload-form .salute p{
+  font-size: 25px;
+  margin: 10px auto;
+  color: #4c4c4b;
+}
+
+.upload-form .salute ol{
+  font-size: 20px;
+  text-align: left;
+  display: inline-block;
+  margin: 5px auto;
+  color: #4c4c4b;
+}
+
+.upload-form .form{
+  margin: 35px auto 20px;
+}
+
+.upload-form .form input{
+  border-radius: 5px;
+  border: 2px solid hotpink;
+  display: block;
+  width: 450px;
+  height: 40px;
+  text-align: center;
+  margin: 5px auto;
+}
+
+.success{
+  background-color: teal;
+  border-radius: 7px;
+  border: 2px solid gray;
+  color: white;
+  width: 60%;
   height: auto;
   margin: auto;
 }
 
 #upload, #logOut{
+  margin: 20px 20px;
+  text-align: center;
+  background-color: lightpink;
+  color: #4c4c4b;
+  border: 2px dotted hotpink;
   width: 30%;
+  height: 35px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+#upload:hover, #logOut:hover{
+  background-color: pink;
+  color: black;
+}
+
+#upload:active, #logOut:active{
+  transform: translateY(3px);
 }

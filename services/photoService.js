@@ -26,6 +26,15 @@ let defaultImages = [{
   precio: 1100
 }];
 
+self.pushArray = function (data) {
+  defaultImages.unshift({
+    url: data.url,
+    producto: data.producto,
+    precio: data.precio
+  })
+  return defaultImages
+}
+
 self.getImg = function () {
   return defaultImages
 }
